@@ -36,6 +36,8 @@
 #include <vector>
 #include <string>
 
+#include <cstdlib>
+
 #include "ess.hh"
 #include "quality_pyramid.hh"
 

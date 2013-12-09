@@ -53,13 +53,15 @@ if __name__ == "__main__":
     import sys
     import pylab
     from numpy import array
+    import matplotlib
     
     try:
-        xyc = pylab.load(sys.argv[1])
+        xyc = matplotlib.mlab.load(sys.argv[1])
+        print xyc.shape
         x=array(xyc[:,0], c_double).copy() # force to be contiguous
         y=array(xyc[:,1], c_double).copy()
         c=array(xyc[:,2], c_double).copy()
-        w = pylab.load(sys.argv[2])
+        w = matplotlib.mlab.load(sys.argv[2])
         numpoints = len(x)
         width = max(x)+10
         height = max(y)+10

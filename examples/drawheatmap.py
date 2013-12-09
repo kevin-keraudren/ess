@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# python drawheatmap.py cow.weight cow.clst 
+# python drawheatmap.py car-l1.weight car.clst 
 
 import sys
 	
@@ -6,15 +8,16 @@ import numpy as N
 import pylab 
 from PIL import Image
 from ctypes import c_uint8
+import matplotlib
 
 try:
-	w = pylab.load(sys.argv[1])
+	w = matplotlib.mlab.load(sys.argv[1])
 except IndexError:
         print "Usage: %s weight-file weights.txt image1.clst [image2.clst [...]]" % sys.argv[0]
 	raise SystemExit
 
 for xycname in sys.argv[2:]:
-    xyc = pylab.load(xycname)
+    xyc = matplotlib.mlab.load(xycname)
 
     x = xyc[:,0]
     y = xyc[:,1]
